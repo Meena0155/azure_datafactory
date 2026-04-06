@@ -1,0 +1,9 @@
+{
+	"name": "testmsnew",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "76c96372-fbb6-48fc-ba11-5efe3c883f98",
+		"tenantId": "6b7d3a1d-4be6-417f-929f-37b0119ba799"
+	}
+}
