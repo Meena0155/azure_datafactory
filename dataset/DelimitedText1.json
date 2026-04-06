@@ -5,13 +5,29 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"feedbacksrc": {
+				"type": "string",
+				"defaultValue": "sample_feedback.csv"
+			},
+			"aibiincfeedipcontainer": {
+				"type": "string",
+				"defaultValue": "input"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "sample_feedback.csv",
-				"container": "input"
+				"fileName": {
+					"value": "@dataset().feedbacksrc",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().aibiincfeedipcontainer",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

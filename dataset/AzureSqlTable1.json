@@ -5,12 +5,28 @@
 			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"feedbacktgt": {
+				"type": "string",
+				"defaultValue": "sample_feedback"
+			},
+			"feedbacktgtschema": {
+				"type": "string",
+				"defaultValue": "dbo"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "sample_feedback"
+			"schema": {
+				"value": "@dataset().feedbacktgtschema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().feedbacktgt",
+				"type": "Expression"
+			}
 		}
 	}
 }

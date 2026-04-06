@@ -46,13 +46,21 @@
 				"inputs": [
 					{
 						"referenceName": "DelimitedText1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"feedbacksrc": "sample_feedback.csv",
+							"aibiincfeedipcontainer": "input"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"feedbacktgt": "sample_feedback",
+							"feedbacktgtschema": "dbo"
+						}
 					}
 				]
 			}
